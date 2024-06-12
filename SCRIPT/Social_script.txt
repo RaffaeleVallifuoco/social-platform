@@ -14,8 +14,10 @@ where m.`type` = "video" ;
 
 # Seleziona tutti i post senza Like 
 
-SELECT *
+SELECT p.*
 FROM posts p 
+LEFT JOIN likes l ON p.id = l.post_id
+WHERE l.post_id IS NULL;
 
 
 
